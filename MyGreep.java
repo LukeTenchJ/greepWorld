@@ -117,6 +117,9 @@ public class MyGreep extends Greep
             setMemory(1, tomatoes.getX());
             setMemory(2, tomatoes.getY());
         }
+        else { setMemory(0, 0);
+            setMemory(1, 0);
+            setMemory(2, 0); }
     }
     
     /** 
