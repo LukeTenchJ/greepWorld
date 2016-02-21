@@ -82,11 +82,11 @@ public class MyGreep extends Greep
             move();
         }
         else if (numberOfOpponents(true) > 0) {
-            // Can we see one or more opponents holding tomatoes
+            // Can we see one or more opponents holding tomatoes, is so explode
             kablam();            
         } 
         else if (numberOfOpponents(false) > 3) {
-            // Can we see six or more opponents?
+            // Can we see 4 or more opponents, if so explode
             kablam();            
         } 
         else {
@@ -117,6 +117,7 @@ public class MyGreep extends Greep
             setMemory(1, tomatoes.getX());
             setMemory(2, tomatoes.getY());
         }
+		// if no more tomatoes reset positions of known tomato stack
         else { setMemory(0, 0);
             setMemory(1, 0);
             setMemory(2, 0); }
@@ -144,7 +145,7 @@ public class MyGreep extends Greep
             dropTomato();
         }
         if (atWater() || moveWasBlocked()) {
-            // If we were blocked, try to move somewhere else
+            // if blocked/stuck at a wall try to move out
             turnHome();
             turn(30);
             move();
